@@ -1,0 +1,1186 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&display=swap');
+
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Righteous', cursive; */
+
+
+
+/* Box sizing */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+/* Globally Elements */
+    :root {
+        --clr-primary: #ECF1F4;
+        --clr-secondary: #738085;
+        --clr-black: #333333;
+        --clr-white: #ffffff;
+
+        --font-rightous: 'Righteous', cursive;
+        --font-kanit: 'Kanit', sans-serif;
+    }
+
+    li {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    .main-container {
+        width: 85%;
+        margin: 0 auto;
+        height: auto;
+    }
+
+    /* Reset margins */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+        margin: 0; 
+    }
+
+/* set up the body */
+    body {
+        line-height: 1.5;
+        min-height: 100vh;
+        overflow-x: hidden;
+        grid-template-rows: min-content 1fr;
+    }
+
+/* make images easier to work with */
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+/* make form elements easier to work with */
+    /* input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    } */
+
+/* remove animations for people who've turned them off */
+    @media (prefers-reduced-motion: reduce) {  
+        *,
+        *::before,
+        *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+        }
+    }
+
+
+/* Section-Home */
+    section.home {
+        background-color: var(--clr-primary);
+    }
+
+    /* Navbar */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 3rem;
+            align-items: center;
+        }
+
+        .logo-part {
+            width: 20%;
+            height: auto;
+        }
+
+        .primary-navigation {
+            display: flex;
+            padding: 0;
+            background: hsl( var(--clr-primary) / 0.05);
+            backdrop-filter: blur(1.5rem);
+        }
+
+        .navbar u li {
+            display: inline-block;
+        }
+
+        .navbar ul li a{
+            color: var(--clr-black);
+            margin-right: 3em;
+            font-family: var(--font-kanit);
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--clr-black);
+            font-size: 0.9em;
+        }
+
+        /* Responsive Navbar Menu */
+            .mobile-nav-toggle {
+                display: none;
+            }
+
+            .sr-only {
+                position: absolute; 
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px; 
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                white-space: nowrap; /* added line */
+                border: 0;
+            }
+
+    /* Section-Home-Content */
+        .home-content {
+            display: flex;
+            justify-content: space-between;
+            /* grid-template-columns: 1fr 1fr; */
+            gap: 5rem;
+            padding: 7% 0;
+            align-items: center;
+            color: var(--clr-black);
+        }
+
+        /* Home Left Part (Profile-picture) */
+            .profile-frame {
+                width: 500px;
+                height: 500px;
+                background-image: url(./img/profile-frame.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .profile-pic {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .profile-pic img {
+                width: 75%;
+                height: auto;
+                border-radius: 50%;
+                box-shadow: 0 0 50px 0 rgba(33, 33, 33, 0.6);
+            }
+
+        /* Home Right Part (Home-Content) */
+            .right-home {
+                padding-right: 4rem;
+                display: block;
+                width: auto;
+            }
+
+            .content h1 {
+                font-family: var(--font-rightous);
+                font-size: 30px;
+                letter-spacing: 3px;
+                font-weight: normal;
+            }
+
+            .content h1 span {
+                font-family: var(--font-kanit);
+                font-weight: 800;
+                font-size: 60px;
+            }
+
+            .content p {
+                font-family: var(--font-kanit);
+                font-size: 15px;
+                font-weight: 300;
+                color: rgba(33, 33, 33, 0.8);
+            }
+
+            .home-btn button {
+                border: 2px solid var(--clr-secondary);
+                margin-top: 10%;
+                cursor: pointer;
+                padding: 0.8rem;
+                background-color: var(--clr-primary);
+            }
+
+            .home-btn button:hover {
+                background-color: var(--clr-secondary);
+            }
+
+            .home-btn button:hover > .download-resume {
+                color: var(--clr-primary);
+            }
+
+            .home-btn button a {
+                color: var(--clr-secondary);
+                text-transform: uppercase;
+                font-size: 15px;
+                font-family: var(--font-rightous);
+            }
+
+/* Heading */
+/* Heading Will be same in Style for all the Sections. */
+    .heading h3 {
+        font-size: 17px;
+        opacity: 0.3;
+        font-weight: 500;
+        font-family: var(--font-rightous);
+    }
+
+    .heading h3::before {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 3px;
+        left: 5%;
+        margin-top: 10.5px;
+        background-color: var(--clr-black);
+        opacity: 0.8;
+    }
+
+    .heading h1 {
+        font-size: 50px;
+        font-weight: 600;
+        width: 60%;
+        margin: 2% 0;
+    }
+
+    .heading h1 span {
+        color: var(--clr-black);
+        opacity: 0.3;
+    }
+
+
+/* Section-About */
+    .about-content {
+        padding: 10% 0;
+        align-items: center;
+        color: var(--clr-black);
+        font-family: var(--font-kanit);
+        text-align: left;
+        letter-spacing: 2px;
+    }
+    
+    /* Expertice Card */
+        .expertise {
+            display: flex;
+            justify-content: space-between;
+            margin: 7% 0 2%;
+        }
+
+        .expertise-card {
+            padding-right: 2%;
+            width: 22%;
+        }
+
+        .expertise-img {
+                width: 45%;
+                height: 45%;
+                background-image: url(./img/expertise-bg.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+
+        .expertise-img img {
+            width: 50%;
+            height: auto;
+        }
+
+        .expertise-content {
+            margin-top: 15%;
+        }
+
+        .expertise-content h3 {
+            font-size: 25px;
+            font-family: var(--font-rightous);
+            font-weight: 500;
+        }
+
+        .expertise-content p {
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            padding-right: 20px;
+            margin-top: 2%;
+            line-height: 1.3;
+        }
+
+
+/* Section-Skills */
+    section.skills {
+        background-color: var(--clr-primary);
+        color: var(--clr-black);
+        padding: 10% 0;
+        font-family: var(--font-kanit);
+        text-align: left;
+        letter-spacing: 2px;
+    }
+
+    /* Progress Bar */
+        .skills-progress {
+            padding: 4% 0;
+        }
+
+        .progress-part {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-top: 3%;
+        }
+
+        .progress-part h3 {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .bar {
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .bar h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-top: -5%;
+            margin-left: -5%;
+        }
+
+/* Section-Portfolio */
+    section.portfolio {
+        background-color: var(--clr-secondary);
+        color: var(--clr-primary);
+        padding: 10% 0;
+        font-family: var(--font-kanit);
+        text-align: left;
+        letter-spacing: 2px;
+    }
+
+    /* Heading */
+        .portfolio-content .heading h3::before {
+            background-color: var(--clr-primary);
+        }
+
+        .portfolio-content .heading h1 span {
+            color: var(--clr-primary);
+        }
+
+    /* Image Galary */
+        .tabs {
+            margin-top: 7%;
+        }
+
+        .tabs ul{
+            display: flex;
+            padding: 0;
+            flex-wrap: wrap;
+            align-items: center;
+            margin: 0;
+        }
+
+        .tabs ul li a{
+            color: var(--clr-primary);
+            font-family: var(--font-rightous);
+            font-size: 12px;
+            border: 1px solid var(--clr-primary);
+            margin-bottom: 15px;
+            margin-right: 30px;
+            padding: 5px 20px;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .tabs ul li a:hover {
+            background-color: var(--clr-primary);
+            border: 1px solid var(--clr-secondary);
+            transition: all .5s ease-in-out;
+            color: var(--clr-secondary);
+        }
+
+        .tabs ul li a.active {
+            background-color: var(--clr-primary);
+            border: 1px solid var(--clr-secondary);
+            color: var(--clr-secondary);
+            transition: all .5s ease-in-out;
+        }
+
+        .images {
+            display: flex;
+            justify-content: left;
+        }
+
+        .items {
+            flex: 0 0 20%;
+            max-width: 20%;
+            margin: 2rem 2rem 0 0;
+        }
+
+        .images a img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 20px solid var(--clr-primary);
+        }
+
+        .mfp-bottom-bar {
+            font-family: var(--font-rightous);
+        }
+
+/* Section Blogs */
+    section.blogs {
+        background-color: var(--clr-white);
+        color: var(--clr-black);
+        padding: 10% 0;
+        font-family: var(--font-kanit);
+        text-align: left;
+        letter-spacing: 2px;
+    }
+
+
+
+
+/* Responsive-Part Using Media Query */
+@media (max-width: 1280px) {
+    /* HOME SECTION */
+        /* Navbar -------------------------------- */
+            .navbar ul li a {
+                font-size: 0.8em;
+            }
+        /* --------------------------------------- */
+
+        /* Profile Picture ----------------------- */
+            .profile-frame {
+                width: 400px;
+                height: 400px;
+            }
+        /* --------------------------------------- */
+
+        /* Home Right-Part ----------------------- */
+            .content h1 {
+                font-size: 28px;
+            }
+            .content h1 span {
+                font-size: 55px;
+            }
+            .content p {
+                font-size: 13px;
+            }
+            .home-content {
+                gap: 3rem;
+            }
+            .home-btn button {
+                padding: 0.6rem;
+            }
+            .home-btn button a {
+                font-size: 13px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+        /* Heading ------------------------------- */
+            .heading h1 {
+                font-size: 45px;
+                width: 65%;
+            }
+
+            .heading h3 {
+                font-size: 15px;
+            }
+
+            .heading h3::before {
+                margin-top: 9px;
+                left: 4%;
+            }
+        /* --------------------------------------- */
+
+        /* Expertise Card ------------------------ */
+            .expertise-card {
+                width: 25%;
+            }
+
+            .expertise-content h3 {
+                font-size: 22px;
+            }
+
+            .expertise-content p {
+                font-size: 13px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        /* Progress Bar--------------------------- */
+            .bar h3, .progress-part h3 {
+                font-size: 18px;
+            }
+
+            .bar {
+                width: 70%;
+            }
+
+            .bar h3 {
+                margin-top: -6%;
+                margin-left: -6%;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        
+    /* --------------------------------------- */
+}
+
+@media (max-width: 1024px) {
+    /* Global Elements ---------------------- */
+        body {
+            line-height: 1.3;
+        }
+    /* -------------------------------------- */
+
+    /* HOME SECTION */
+        /* Navbar -------------------------------- */
+            .navbar ul li a {
+                font-size: 0.7em;
+            }
+        /* --------------------------------------- */
+    /* -------------------------------------- */
+
+    /* ABOUT SECTION */
+
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        /* Image Gallary ------------------------- */
+            .tabs ul li a {
+                font-size: 10px;
+                margin-right: 25px;
+                padding: 5px 15px;
+                width: 110px;
+            }
+
+            .images a img {
+                border: 17px solid var(--clr-primary);
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+}
+
+@media (max-width: 992px) {
+    /* Global Elements ---------------------- */
+        .main-container {
+            width: 90%;
+        }
+    /* -------------------------------------- */
+
+    /* HOME SECTION */
+        /* Navbar -------------------------------- */
+            .navbar ul li a {
+                margin-right: 2em;
+            }
+            .logo-part {
+                width: 25%;
+            }
+        /* --------------------------------------- */
+
+        /* Profile Picture ----------------------- */
+            .profile-frame {
+                width: 300px;
+                height: 300px;
+            }
+        /* --------------------------------------- */
+
+        /* Home Right-Part ----------------------- */
+            .content h1 {
+                font-size: 25px;
+            }
+            .content h1 span {
+                font-size: 50px;
+            }
+            .content p {
+                font-size: 11px;
+            }
+            .home-btn button {
+                padding: 0.5rem;
+            }
+            .home-btn button a {
+                font-size: 11px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+        /* Heading ------------------------------- */
+            .heading h1 {
+                font-size: 40px;
+                width: 70%;
+            }
+
+            .heading h3 {
+                font-size: 13px;
+            }
+
+            .heading h3::before {
+                margin-top: 7px;
+                left: 2%;
+                width: 15px;
+                height: 2px;
+            }
+        /* --------------------------------------- */
+
+        /* Expertise Card ------------------------ */
+            .expertise-card {
+                width: 28%;
+            }
+
+            .expertise-content h3 {
+                font-size: 20px;
+            }
+
+            .expertise-content p {
+                font-size: 11px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        /* Progress Bar--------------------------- */
+            .bar h3, .progress-part h3 {
+                font-size: 15px;
+            }
+            
+            .bar img {
+                height: 3px;
+            }
+
+            .bar h3 {
+                margin-top: -7%;
+                margin-left: -7%;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        
+    /* --------------------------------------- */
+}
+
+@media (max-width: 768px) {
+    /* HOME SECTION */
+        /* Navbar -------------------------------- */
+            .logo-part {
+                width: 30%;
+            } 
+        /* --------------------------------------- */
+
+        /* Profile Picture ----------------------- */
+            .profile-frame {
+                width: 250px;
+                height: 250px;
+            }
+        /* --------------------------------------- */
+
+        /* Home Right-Part ----------------------- */
+            .content h1 {
+                font-size: 22px;
+            }
+            .content h1 span {
+                font-size: 45px;
+            }
+            .content p {
+                font-size: 9px;
+            }
+            .home-btn button {
+                line-height: 0.5;
+            }
+            .home-btn button a {
+                font-size: 9px;
+            }
+            .right-home {
+                padding-right: 1rem;
+            }
+        /* --------------------------------------- */
+
+        /* Responsive Navbar-Menu ---------------- */
+            .primary-navigation {
+                position: fixed;
+                z-index: 1000;
+                inset: 0 0 0 60%;
+                list-style: none;
+                padding: min(20rem, 15vh) 2rem!important;
+                margin: 0;
+                flex-direction: column;
+                transform: translateX(100%);
+                transition: transform 500ms ease-in-out;
+            }
+
+            .primary-navigation li {
+                padding: 0.5em 0;
+            }
+            
+            .primary-navigation[data-visible="true"] {
+                transform: translateX(0);
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                position: absolute;
+                z-index: 2000;
+                cursor: pointer;
+                right: 2.5em;
+                top: 2.2em;
+                background: transparent;
+                background-image: url(./img/menu.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 4.5rem;
+                aspect-ratio: 1;
+                border: 0;
+            }
+
+            .mobile-nav-toggle[aria-expanded="true"] {
+                background-image: url(./img/close.png);
+            }
+            
+            .mobile-nav-toggle:focus-visible {
+                outline: 5px solid white;
+                outline-offset: 5px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+        /* Heading ------------------------------- */
+        .heading h1 {
+            font-size: 35px;
+            width: 70%;
+        }
+
+        .heading h3 {
+            font-size: 11px;
+        }
+
+        .heading h3::before {
+            margin-top: 5px;
+            left: 2%;
+            width: 13px;
+        }
+        /* --------------------------------------- */
+
+        /* Expertise Card ------------------------ */
+            .expertise-card {
+                width: 30%;
+            }
+
+            .expertise-content h3 {
+                font-size: 18px;
+            }
+
+            .expertise-content p {
+                font-size: 9px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        /* Progress Bar--------------------------- */
+            .bar h3, .progress-part h3 {
+                font-size: 12px;
+            }
+
+            .bar {
+                width: 60%;
+            }
+            
+            .bar h3 {
+                margin-top: -7%;
+                margin-left: -8%;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        /* Image Gallary ------------------------- */
+            .tabs ul li a {
+                font-size: 8px;
+                margin-right: 20px;
+                padding: 5px 12px;
+                width: 100px;
+            }
+
+            .items {
+                margin: 1rem 1rem 0 0;
+            }
+
+            .images a img {
+                border: 10px solid var(--clr-primary);
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+}
+
+@media (max-width: 690px) {
+    /* HOME SECTION */
+        /* Profile Picture ----------------------- */
+            .profile-frame {
+                width: 200px;
+                height: 200px;
+            }
+        /* --------------------------------------- */
+
+        /* Home Right-Part ----------------------- */
+            .content h1 {
+                font-size: 18px;
+            }
+            .content h1 span {
+                font-size: 35px;
+            }
+            .content p {
+                font-size: 7px;
+            }
+            .home-btn button {
+                line-height: 0.4rem;
+            }
+            .home-btn button a {
+                font-size: 7px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+       
+    /* --------------------------------------- */
+}
+
+@media (max-width: 600px) {
+    /* Global Elements ---------------------- */
+        .main-container {
+            width: 90%;
+        }
+    /* -------------------------------------- */
+    
+    /* HOME SECTION */
+        /* Navbar -------------------------------- */
+            .logo-part {
+                width: 40%;
+            }
+            .header {
+                padding-top: 2rem;
+            }
+        /* --------------------------------------- */
+
+        /* Responsive Navbar-Menu ---------------- */
+        .mobile-nav-toggle {
+            right: 2rem;
+            top: 1.5em;
+        }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+        /* Heading ------------------------------- */
+        .heading h1 {
+            font-size: 30px;
+        }
+
+        .heading h3 {
+            font-size: 9px;
+        }
+
+        .heading h3::before {
+            margin-top: 4px;
+            left: 2%;
+            width: 10px;
+        }
+        /* --------------------------------------- */
+
+        /* Expertise Card ------------------------ */
+            .expertise-card {
+                width: 32%;
+            }
+
+            .expertise-content h3 {
+                font-size: 15px;
+            }
+
+            .expertise-content p {
+                font-size: 7px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        /* Image Gallary ------------------------- */
+            .tabs ul li a {
+                font-size: 7px;
+                margin-right: 15px;
+                padding: 3px 8px;
+                width: 80px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+}
+
+@media (max-width: 550px) {
+    /* HOME SECTION */
+            .home-content {
+                gap: 1.5rem;
+            }
+
+        /* Profile Picture ----------------------- */
+            .profile-frame {
+                width: 150px;
+                height: 150px;
+            }
+        /* --------------------------------------- */
+
+        /* Home Right-Part ----------------------- */
+            .content h1 {
+                font-size: 15px;
+            }
+            .content h1 span {
+                font-size: 30px;
+            }
+            .content p {
+                font-size: 6px;
+            }
+            .home-btn button {
+                line-height: 0.3rem;
+            }
+            .home-btn button a {
+                font-size: 6px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+        
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        /* Progress Bar--------------------------- */
+            .bar h3, .progress-part h3 {
+                font-size: 10px;
+            }
+
+            .progress-part {
+                gap: 10px;
+            }
+
+            .bar img {
+                height: 2px;
+            }
+
+            .bar h3 {
+                margin-top: -7%;
+                margin-left: -15%;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        
+    /* --------------------------------------- */
+}
+
+@media (max-width: 450px) {
+    /* Global Elements ---------------------- */
+        .main-container {
+            width: 95%;
+        }
+    /* -------------------------------------- */
+
+    /* HOME SECTION */
+        /* Responsive Navbar-Menu ---------------- */
+            .mobile-nav-toggle {
+                right: 0em;
+                top: 1.2em;
+            }
+            .primary-navigation {
+                inset: 0 0 0 50%;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+        .about-content {
+            letter-spacing: 1.5px;
+        }
+
+        /* Heading ------------------------------- */
+        .heading h1 {
+            font-size: 20px;
+        }
+
+        .heading h3 {
+            font-size: 7px;
+        }
+
+        .heading h3::before {
+            margin-top: 4px;
+            left: 0.5%;
+            width: 4px;
+            height: 1px;
+        }
+    /* --------------------------------------- */
+
+    /* Expertise Card ------------------------ */
+        .expertise-card {
+            width: 33%;
+        }
+
+        .expertise-content h3 {
+            font-size: 12px;
+        }
+
+        .expertise-content p {
+            font-size: 6px;
+            padding-right: 10px;
+        }
+    /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        
+    /* --------------------------------------- */
+}
+
+@media (max-width: 400px) {
+    /* HOME SECTION */
+        .home-content {
+            gap: 1rem;
+        }
+
+        /* Profile Picture ---------------------- */
+            .profile-frame {
+                width: 100px;
+                height: 100px;
+            }
+        /* -------------------------------------- */
+
+        /* Home Right-Part ---------------------- */
+            .content h1 {
+                font-size: 12px;
+            }
+            .content h1 span {
+                font-size: 20px;
+            }
+            .content p {
+                font-size: 5px;
+            }
+            .home-btn button {
+                padding: 0.2rem;
+                line-height: 0.2rem;
+                border: 1px solid var(--clr-secondary);
+            }
+            .home-btn button a {
+                font-size: 5px;
+            }
+        /* -------------------------------------- */
+   /* --------------------------------------- */
+
+   /* ABOUT SECTION */
+
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        /* Image Gallary ------------------------- */
+            .tabs ul li a {
+                font-size: 6px;
+                margin-right: 10px;
+                padding: 3px 7px;
+                width: 60px;
+                letter-spacing: 1px;
+            }
+
+            .images a img {
+                border: 8px solid var(--clr-primary);
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+}
+
+@media (max-width: 350px) {
+    /* HOME SECTION */
+        /* Responsive Navbar-Menu ---------------- */
+            .mobile-nav-toggle {
+                top: 0.8em;
+            }
+            .primary-navigation {
+                inset: 0 0 0 40%;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* ABOUT SECTION */
+
+    /* --------------------------------------- */
+
+    /* SKILLS SECTION */
+        /* Progress Bar--------------------------- */
+            .bar h3, .progress-part h3 {
+                font-size: 8px;
+            }
+
+            .progress-part {
+                gap: 5px;
+            }
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+
+    /* PORTFOLIO SECTION */
+        /* Image Gallary ------------------------- */
+        .tabs ul li a {
+            margin-bottom: 10px;
+        }
+
+        .items {
+            flex: 0 0 20%;
+            max-width: 20%;
+            margin: 0.5rem 0.5rem 0 0;
+        } 
+        /* --------------------------------------- */
+    /* --------------------------------------- */
+}
